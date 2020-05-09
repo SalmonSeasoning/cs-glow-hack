@@ -10,6 +10,18 @@ DWORD WINAPI fnMain(HMODULE hMod)
     //  MessageBox(NULL, "Success!", "Injected successfully!", MB_OK | MB_ICONINFORMATION);
     Beep(250, 200);
 
+    // team glow (RGBA)
+    // was originally in loop
+    glow_t teamGlow{};
+    teamGlow.b = 2.0f;
+    teamGlow.a = 1.7f;
+    
+    // enemy glow (RGBA)
+    // was originally in loop
+    glow_t enemyGlow{};
+    enemyGlow.r = 2.0f;
+    enemyGlow.a = 1.7f;
+
     // Hack loop
     while (true)
     {
@@ -26,14 +38,6 @@ DWORD WINAPI fnMain(HMODULE hMod)
 
         // Anti Flash
         AntiFlash();
-
-        glow_t teamGlow{};
-        teamGlow.b = 2.0f;
-        teamGlow.a = 1.7f;
-
-        glow_t enemyGlow{};
-        enemyGlow.r = 2.0f;
-        enemyGlow.a = 1.7f;
 
         for (short i = 0; i < 64; ++i)
         {
